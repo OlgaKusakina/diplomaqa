@@ -46,14 +46,7 @@ docker-compose up
 
 ## Запуск отдельных тестовых классов
 Чтобы не запускать все тесты разом, предусмотрено два варианта запуска отдельных тестовых классов:
-### Вариант 1
-1. В `build.gradle` изменить адрес БД. Для этого нужно заменить строчку `systemProperty 'db.url', System.getProperty('db.url')` на:
-- `systemProperty 'db.url', System.getProperty('db.url', 'jdbc:mysql://localhost:3306/app')` - для MySQL
-- `systemProperty 'db.url', System.getProperty('db.url', 'jdbc:postgresql://localhost:5432/app')` - для PostgreSQL
-2. Запустить приложение (раздел "Запуск", в зависимости от БД)
-3. Запустить необходимый тестовый класс командой в терминале: `gradlew clean test --tests PayHappyPathTest` , где PayHappyPathTest - тестовый класс, подлежащий запуску. Или запустить необходимый тестовый класс через IDE с помощью команды Run
 
-### Вариант 2
 1. В `build.gradle` в раздел test добавить следующее:
     ```
     filter {
